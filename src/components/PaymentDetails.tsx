@@ -17,11 +17,11 @@ export function PaymentDetails({ onNext, onBack, language }: PaymentDetailsProps
             <div className="space-y-3">
               {/* Pay in Store */}
               <div className="p-3 md:p-4 border-2 border-gray-900 rounded bg-gray-50">
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="w-5 h-5 rounded-full border-2 border-gray-900"></div>
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-5 h-5 rounded-full border-2 border-gray-900 mt-0.5"></div>
                   <div className="flex-1">
-                    <div className="h-4 w-40 md:w-48 bg-gray-400 rounded mb-1"></div>
-                    <div className="h-3 w-full md:w-64 bg-gray-300 rounded"></div>
+                    <div className="mb-1">Ter Plaatse</div>
+                    <div className="text-sm text-gray-600">Betaal bij het afhalen in de bakkerij</div>
                   </div>
                 </div>
               </div>

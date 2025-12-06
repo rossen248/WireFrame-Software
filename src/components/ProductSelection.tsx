@@ -8,6 +8,7 @@ interface ProductSelectionProps {
 export function ProductSelection({ onNext, language }: ProductSelectionProps) {
   const [showProductInfo, setShowProductInfo] = useState<number | null>(null);
   const [showPreviousOrders, setShowPreviousOrders] = useState(false);
+  const [visibleProducts, setVisibleProducts] = useState(8);
 
   return (
     <div>
@@ -104,7 +105,7 @@ export function ProductSelection({ onNext, language }: ProductSelectionProps) {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          {Array.from({ length: visibleProducts }, (_, i) => i + 1).map((item) => (
             <div key={item} className="border-2 border-gray-900 rounded">
               <div className="aspect-square border-b-2 border-gray-900 relative">
                 <svg className="w-full h-full" viewBox="0 0 200 200">
@@ -158,6 +159,16 @@ export function ProductSelection({ onNext, language }: ProductSelectionProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Show More Button - Always visible */}
+        <div className="mt-6 md:mt-8 text-center">
+          <button
+            onClick={() => setVisibleProducts(visibleProducts + 8)}
+            className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-gray-900 rounded"
+          >
+            Toon Meer Broden
+          </button>
         </div>
 
         <div className="mt-8 md:mt-12 flex flex-col sm:flex-row justify-between items-center gap-4 border-t-2 border-gray-900 pt-6 md:pt-8">
